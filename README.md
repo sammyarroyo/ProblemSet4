@@ -18,7 +18,7 @@ Problem Set 4 for Zoo6927: Creating a database
  ### you can easily search through these two tables to find information on which utility company runs your zip code, and what the utility company charges are.  
  
  ### 3. Either directly in sqlite or in Python with SQLAlchemy, write the code needed to define the tables above.
-
+```
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy import sql, select, join, desc
@@ -50,11 +50,12 @@ except:
              )    
 
 metadata.create_all(engine)
-
+```
 
 ### 4. Write the code to load the data into the database. 
 
-import csv
+```
+mport csv
 EUC=open("/ufrc/zoo6927/share/arroyo.sr/ProblemSet4/noniouzipcodes2015.csv")
 reader = csv.DictReader(EUC)
 
@@ -91,4 +92,5 @@ for Line in reader:
                              res_rate = Line['res_rate']
                              )
     
-    result = conn.execute(ins)
+   result = conn.execute(ins)
+```
